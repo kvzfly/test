@@ -1,8 +1,8 @@
 #!/bin/sh
 cd ${WORKSPACE}/src
-docker build -t 192.168.5.36:5002/poc/python-redis-demo:${BUILD_NUMBER} .
+docker build -t 192.168.5.31:80/python-redis-demo:${BUILD_NUMBER} .
 
-docker push 192.168.5.36:5002/poc/python-redis-demo:${BUILD_NUMBER}
+docker push 192.168.5.31:80/python-redis-demo:${BUILD_NUMBER}
 cd ${WORKSPACE}/test-build
 
 sed -i 's/\$\$BUILD_NUMBER\$\$/'${BUILD_NUMBER}'/g' docker-compose.yml
